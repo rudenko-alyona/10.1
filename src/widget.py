@@ -3,7 +3,7 @@ from datetime import datetime
 from masks import get_mask_card_number, get_mask_account
 
 def mask_account_card(account_string: str) -> str:
-
+    '''Принимает тип и номер карты или счета, возвращает маску'''
 
     if account_string.startswith("Счет"):  # обработка случая банковского счёта
         _, account_number = account_string.split(maxsplit=1)
