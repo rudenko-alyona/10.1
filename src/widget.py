@@ -2,7 +2,7 @@ from datetime import datetime
 
 from masks import get_mask_card_number, get_mask_account
 
-def mask_account_card(account_string):
+def mask_account_card(account_string: str) -> str:
 
 
     if account_string.startswith("Счет"):  # обработка случая банковского счёта
@@ -26,7 +26,7 @@ print(f"Вход:  {test2}")
 print(f"Выход: {result2}")
 
 
-def get_date(iso_date_str):
+def get_date(iso_date_str: str) -> str:
     """Преобразует дату из формата ISO8601 в формат 'DD.MM.YYYY'"""
     # Отбрасываем лишнюю информацию после секунды (.671407)
     cleaned_iso_date = iso_date_str.split('.')[0]
