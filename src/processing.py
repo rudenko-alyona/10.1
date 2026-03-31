@@ -1,4 +1,4 @@
-def filter_by_state(data, state='EXECUTED'):
+def filter_by_state(data: list, state: str ='EXECUTED') -> list:
     """
     Фильтрует список словарей по значению ключа 'state'.
 
@@ -34,7 +34,7 @@ print(pending_transactions)
 from datetime import datetime
 
 
-def sort_by_date(data, reverse=True):
+def sort_by_date(data: list, reverse: bool =True):
     """
     Сортирует список словарей по дате (ключ 'date').
 
@@ -46,7 +46,7 @@ def sort_by_date(data, reverse=True):
     list: новый отсортированный список словарей
     """
 
-    def parse_date(item):
+    def parse_date(item: list) -> list:
 
         date_str = item['date']
 
