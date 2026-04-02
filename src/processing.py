@@ -26,13 +26,9 @@ print(pending_transactions)
 from datetime import datetime
 
 
-def sort_by_date(data_list, descending=True):
+def sort_by_date(data_list: list, descending: bool =True):
     """
     Сортирует список словарей по ключу 'date'.
-
-    :param data_list: Список словарей (например, [{'date': '01.01.2023'}, ...])
-    :param descending: Порядок сортировки (True - убывание, False - возрастание)
-    :return: Новый отсортированный список
     """
     # Преобразуем строковую дату в объект datetime для правильного сравнения
     # Формат даты 'dd.mm.yyyy'
