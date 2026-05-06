@@ -24,13 +24,26 @@ print(pending_transactions)
 # Вывод: [{'id': 2, 'state': 'PENDING'}]
 
 
+from datetime import datetime
+
+
 def sort_by_date(data_list: list, descending: bool = True):
     """
     Сортирует список словарей по ключу 'date'.
+
+        data_list (list): Список словарей, каждый из которых должен содержать ключ 'date'
+                       со значением в формате ISO (например, '2019-07-03T18:35:29.512364').
+        descending (bool): Если True, сортировка по убыванию (новые даты первыми).
+                         Если False — по возрастанию (старые даты первыми).
+
+    Returns:
+        list: Отсортированный список словарей.
     """
-    # Преобразуем строковую дату в объект datetime для правильного сравнения
-    # Формат даты 'dd.mm.yyyy'
-    return sorted(data, key=lambda x: x['date'], reverse=descending)
+    return sorted(
+        data_list,
+        key=lambda x: datetime.fromisoformat(x['date']),
+        reverse=descending
+    )
 
 
 # Пример использования
