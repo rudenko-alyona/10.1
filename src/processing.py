@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 def filter_by_state(data: list, state: str = 'EXECUTED') -> list:
     """
     Фильтрует список словарей по значению ключа 'state'.
@@ -24,17 +27,15 @@ print(pending_transactions)
 # Вывод: [{'id': 2, 'state': 'PENDING'}]
 
 
-from datetime import datetime
-
-
 def sort_by_date(data_list: list, descending: bool = True):
     """
     Сортирует список словарей по ключу 'date'.
 
-        data_list (list): Список словарей, каждый из которых должен содержать ключ 'date'
-                       со значением в формате ISO (например, '2019-07-03T18:35:29.512364').
-        descending (bool): Если True, сортировка по убыванию (новые даты первыми).
-                         Если False — по возрастанию (старые даты первыми).
+        data_list (list): Список словарей,
+            ключ 'date' со значением в формате ISO ('2019-07-03T18:35:29.512364').
+        descending (bool):
+            Если True, сортировка по убыванию (новые даты первыми).
+            Если False — по возрастанию (старые даты первыми).
 
     Returns:
         list: Отсортированный список словарей.
